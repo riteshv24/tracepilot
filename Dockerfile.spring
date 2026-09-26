@@ -1,0 +1,16 @@
+FROM maven:3.9.11-eclipse-temurin-21 AS build
+WORKDIR /app
+COPY pom.xml ./
+COPY engine engine
+COPY standalone standalone
+COPY spring spring
+COPY web web
+RUN mvn -B -ntp -pl spring -am package -DskipTests
+FROM eclipse-temurin:21-jdk
+WORKDIR /app
+RUN groupadd --system app && useradd --system --gid app --create-home app && mkdir /app/data && chown app:app /app/data
+COPY --from=build /app/spring/target/tracepilot-spring-0.1.0.jar app.jar
+USER app
+ENV PORT=8311 APP_BIND=0.0.0.0 APP_DATA=/app/data
+EXPOSE 8311
+ENTRYPOINT ["java","-jar","/app/app.jar"]

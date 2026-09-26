@@ -1,0 +1,12 @@
+{
+  "mode": "offline DOM with exported real engine responses",
+  "pageErrors": [],
+  "visitedViews": [
+    "experiments",
+    "datasets",
+    "prompts",
+    "activity"
+  ],
+  "mobileHorizontalOverflow": false,
+  "screenshots": 4
+}

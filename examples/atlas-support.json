@@ -1,0 +1,150 @@
+{
+  "name": "Atlas support · evaluation set",
+  "description": "12 fictional support cases with recorded candidate responses. Scores are computed on startup; there are no invented production metrics.",
+  "cases": [
+    {
+      "id": "case-01",
+      "question": "How long are Atlas backups retained?",
+      "context": "Atlas backups are retained for 14 days. Backups are encrypted at rest.",
+      "reference": "Atlas backups are retained for 14 days.",
+      "recordedResponse": "Atlas backups are retained for 14 days.",
+      "requiredPhrases": [
+        "14 days"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-02",
+      "question": "Which authentication methods does Atlas support?",
+      "context": "Atlas supports SAML and OpenID Connect for enterprise authentication.",
+      "reference": "Atlas supports SAML and OpenID Connect for enterprise authentication.",
+      "recordedResponse": "Atlas supports SAML and OpenID Connect for enterprise authentication.",
+      "requiredPhrases": [
+        "SAML",
+        "OpenID Connect"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-03",
+      "question": "What is the default API rate limit?",
+      "context": "The Atlas API rate limit is 120 requests per minute per workspace.",
+      "reference": "The Atlas API rate limit is 120 requests per minute per workspace.",
+      "recordedResponse": "The API supports unlimited requests and has no rate limits.",
+      "requiredPhrases": [
+        "120"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-04",
+      "question": "Where can an owner export audit logs?",
+      "context": "Workspace owners can export audit logs from Settings > Audit as CSV.",
+      "reference": "Workspace owners can export audit logs from Settings > Audit as CSV.",
+      "recordedResponse": "Workspace owners can export audit logs from Settings > Audit as CSV.",
+      "requiredPhrases": [
+        "CSV"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-05",
+      "question": "How does Atlas rotate API keys?",
+      "context": "Atlas API keys must be rotated manually. Creating a new key does not revoke the old key.",
+      "reference": "Atlas API keys must be rotated manually.",
+      "recordedResponse": "Atlas automatically rotates every key daily without user action.",
+      "requiredPhrases": [
+        "manually"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-06",
+      "question": "What is Atlas support response time?",
+      "context": "Atlas Pro support aims to respond within one business day. This is a target, not a guaranteed resolution time.",
+      "reference": "Atlas Pro support aims to respond within one business day.",
+      "recordedResponse": "Atlas Pro support aims to respond within one business day.",
+      "requiredPhrases": [
+        "one business day"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-07",
+      "question": "Can read-only users delete a project?",
+      "context": "Read-only users cannot delete projects. Only workspace owners can delete projects.",
+      "reference": "Read-only users cannot delete projects.",
+      "recordedResponse": "Read-only users cannot delete projects.",
+      "requiredPhrases": [
+        "cannot"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-08",
+      "question": "Which regions are available?",
+      "context": "Atlas is available in Virginia and Frankfurt. Region changes require a new workspace.",
+      "reference": "Atlas is available in Virginia and Frankfurt.",
+      "recordedResponse": "Atlas is available in Virginia and Frankfurt.",
+      "requiredPhrases": [
+        "Virginia",
+        "Frankfurt"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-09",
+      "question": "How long are deleted projects recoverable?",
+      "context": "Deleted Atlas projects can be restored within seven days by a workspace owner.",
+      "reference": "Deleted Atlas projects can be restored within seven days by a workspace owner.",
+      "recordedResponse": "Deleted projects can be recovered at any time by every user.",
+      "requiredPhrases": [
+        "seven days"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-10",
+      "question": "Does the starter plan include SSO?",
+      "context": "The Starter plan does not include SSO. SSO is available on the Enterprise plan.",
+      "reference": "The Starter plan does not include SSO.",
+      "recordedResponse": "The Starter plan does not include SSO.",
+      "requiredPhrases": [
+        "does not include"
+      ],
+      "format": "text",
+      "expectRefusal": false
+    },
+    {
+      "id": "case-11",
+      "question": "What is Atlas revenue for next quarter?",
+      "context": "Atlas publishes product documentation but provides no revenue forecasts.",
+      "reference": "Not enough information is available in the provided context.",
+      "recordedResponse": "Not enough information is available in the provided context.",
+      "requiredPhrases": [],
+      "format": "text",
+      "expectRefusal": true
+    },
+    {
+      "id": "case-12",
+      "question": "Return the API status as JSON.",
+      "context": "The API status is operational.",
+      "reference": "{\"status\":\"operational\"}",
+      "recordedResponse": "{\"status\":\"operational\"}",
+      "requiredPhrases": [
+        "operational"
+      ],
+      "format": "json",
+      "expectRefusal": false
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+PASS JSON nested Unicode and escape round trip
+PASS JSON duplicate keys are rejected
+PASS JSON trailing data is rejected
+PASS JSON invalid leading-zero number is rejected
+PASS JSON nonfinite output is rejected
+PASS JSON recursive depth is bounded
+PASS JSON empty arrays and escaped control characters
+PASS Logical paths reject traversal, drives, absolute paths
+PASS Constant-time secret helper distinguishes equal values
+PASS Required text validates size and null bytes
+PASS Read-only transaction cannot mutate store
+PASS Transaction exception rolls back every write
+PASS Stored aggregates use defensive copies
+PASS Concurrent increments remain serializable
+PASS Atomic file store survives close and reopen
+PASS Workspace file lock rejects a second instance
+PASS Corrupt workspace fails closed without overwriting
+PASS Unknown schema version is not silently migrated
+PASS Successful job persists result and hides input
+PASS Idempotency returns original job and rejects changed payload
+PASS Queued cancellation never executes handler
+PASS Running cancellation is cooperative
+PASS Unhandled job failure stores safe error instead of private text
+PASS Restart marks interrupted jobs failed instead of replaying
+PASS Queue capacity is bounded to 64 pending jobs
+PASS Unknown job kinds cannot be scheduled
+PASS Router binds path and percent-decoded query separately
+PASS Router rejects unmatched routes
+PASS Gateway rejects unexpected Host and unauthenticated state access
+PASS Health is public, responses carry CSP and request ID
+PASS Authenticated gateway never exposes workspace secret
+PASS Gateway blocks cross-origin writes before routing
+PASS Gateway enforces JSON writes and body bounds
+PASS Model provider without a configured model fails explicitly
+PASS Ollama adapter sends nonstreaming request and parses token counts
+PASS Ollama embedding adapter validates shape and finite values
+PASS Ollama provider HTTP failure does not silently fall back
+PASS CSV protects spreadsheet formula prefixes
+PASS Provider response reader enforces byte budget
+PASS Provider response reader times out stalled reads
+PASS XML escaping covers graph export special characters
+PASS Token F1 handles repeated tokens as a multiset
+PASS Token F1 handles empty predictions without division by zero
+PASS Reference metrics are absent when reference is absent
+PASS Lexical support is not reported as perfect without context
+PASS Required phrases match whole token sequences
+PASS JSON formatting gate rejects trailing junk
+PASS Latency gate is independent of text quality
+PASS Refusal expectations use explicit supported phrases
+PASS Prompt substitutions cannot evaluate code or dollar expressions
+PASS Prompt rejects unknown variables and missing question
+PASS Duplicate case IDs are rejected
+PASS Versioned datasets preserve history and reject stale writers
+PASS Sample evaluations compute 12 independent cases
+PASS Same-version comparison pairs all stable case IDs
+PASS Comparison rejects different dataset versions
+PASS Annotations have independent optimistic revision
+PASS CSV report has real rows and export headers
+PASS Editing a dataset does not mutate an existing run snapshot
+PASS Missing dataset produces a domain 404
+PASS Dataset case count cannot be zero
+PASS Unknown response provider is rejected
+RESULT: 62 passed; 0 failed
+TAP version 13
+# Subtest: escapes user controlled HTML and quotes
+ok 1 - escapes user controlled HTML and quotes
+  ---
+  duration_ms: 0.886477
+  type: 'test'
+  ...
+# Subtest: handles null text without leaking undefined
+ok 2 - handles null text without leaking undefined
+  ---
+  duration_ms: 1.16235
+  type: 'test'
+  ...
+# Subtest: clamps chart inputs
+ok 3 - clamps chart inputs
+  ---
+  duration_ms: 0.130852
+  type: 'test'
+  ...
+# Subtest: formats finite percentages
+ok 4 - formats finite percentages
+  ---
+  duration_ms: 0.138913
+  type: 'test'
+  ...
+# Subtest: sorting does not mutate original data
+ok 5 - sorting does not mutate original data
+  ---
+  duration_ms: 0.148046
+  type: 'test'
+  ...
+# Subtest: deduplicates by stable identifiers
+ok 6 - deduplicates by stable identifiers
+  ---
+  duration_ms: 0.110912
+  type: 'test'
+  ...
+# Subtest: recognizes all terminal states
+ok 7 - recognizes all terminal states
+  ---
+  duration_ms: 0.19101
+  type: 'test'
+  ...
+# Subtest: invalid dates render a placeholder
+ok 8 - invalid dates render a placeholder
+  ---
+  duration_ms: 0.189477
+  type: 'test'
+  ...
+1..8
+# tests 8
+# suites 0
+# pass 8
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 107.368925

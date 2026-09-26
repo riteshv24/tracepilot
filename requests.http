@@ -1,0 +1,51 @@
+# REST Client examples. Start the app and replace identifiers using list responses.
+@base = http://localhost:8311
+@key =
+
+### Liveness
+GET {{base}}/health
+
+### Runtime metadata
+GET {{base}}/api/meta
+X-Workspace-Key: {{key}}
+
+### Actual route contract
+GET {{base}}/api/routes
+X-Workspace-Key: {{key}}
+
+### Recent jobs
+GET {{base}}/api/jobs
+X-Workspace-Key: {{key}}
+
+### Metadata-only audit history
+GET {{base}}/api/audit
+X-Workspace-Key: {{key}}
+
+### Create a prompt
+POST {{base}}/api/prompts
+Content-Type: application/json
+X-Workspace-Key: {{key}}
+
+{"name":"Grounded support","template":"Context: {{context}}\nQuestion: {{question}}\nAnswer:"}
+
+### Import a dataset from the repository fixture
+POST {{base}}/api/datasets
+Content-Type: application/json
+X-Workspace-Key: {{key}}
+
+< ./examples/atlas-support.json
+
+### Queue a run; replace IDs with those returned above
+POST {{base}}/api/runs
+Content-Type: application/json
+X-Workspace-Key: {{key}}
+Idempotency-Key: example-recorded-run-1
+
+{"name":"Recorded candidate","datasetId":"REPLACE_DATASET_ID","promptId":"REPLACE_PROMPT_ID","provider":"recorded"}
+
+### Compare two completed runs on the same dataset version
+POST {{base}}/api/compare
+Content-Type: application/json
+X-Workspace-Key: {{key}}
+
+{"baselineId":"REPLACE_BASELINE_RUN_ID","candidateId":"REPLACE_CANDIDATE_RUN_ID"}

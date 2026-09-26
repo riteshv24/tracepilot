@@ -1,0 +1,131 @@
+{
+  "baselineId": "2d216ba7-97a7-4051-a755-88a4cc2147e0",
+  "candidateId": "e964c19a-2530-421a-ba13-2beb663c0060",
+  "pairedCases": 12,
+  "regressions": 2,
+  "improvements": 3,
+  "passRateDelta": 0.0833,
+  "p95DeltaMs": -1.0,
+  "changes": [
+    {
+      "caseId": "case-01",
+      "question": "How long are Atlas backups retained?",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "f1Delta": 0.0,
+      "latencyDeltaMs": -1,
+      "baselineResponse": "Atlas backups are retained for 14 days.",
+      "candidateResponse": "Atlas backups are retained for 14 days."
+    },
+    {
+      "caseId": "case-02",
+      "question": "Which authentication methods does Atlas support?",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "f1Delta": 0.0,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "Atlas supports SAML and OpenID Connect for enterprise authentication.",
+      "candidateResponse": "Atlas supports SAML and OpenID Connect for enterprise authentication."
+    },
+    {
+      "caseId": "case-03",
+      "question": "What is the default API rate limit?",
+      "baselinePassed": false,
+      "candidatePassed": true,
+      "f1Delta": 0.6364,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "The API supports unlimited requests and has no rate limits.",
+      "candidateResponse": "The Atlas API rate limit is 120 requests per minute per workspace."
+    },
+    {
+      "caseId": "case-04",
+      "question": "Where can an owner export audit logs?",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "f1Delta": 0.0,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "Workspace owners can export audit logs from Settings > Audit as CSV.",
+      "candidateResponse": "Workspace owners can export audit logs from Settings > Audit as CSV."
+    },
+    {
+      "caseId": "case-05",
+      "question": "How does Atlas rotate API keys?",
+      "baselinePassed": false,
+      "candidatePassed": true,
+      "f1Delta": 0.875,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "Atlas automatically rotates every key daily without user action.",
+      "candidateResponse": "Atlas API keys must be rotated manually."
+    },
+    {
+      "caseId": "case-06",
+      "question": "What is Atlas support response time?",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "f1Delta": 0.0,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "Atlas Pro support aims to respond within one business day.",
+      "candidateResponse": "Atlas Pro support aims to respond within one business day."
+    },
+    {
+      "caseId": "case-07",
+      "question": "Can read-only users delete a project?",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "f1Delta": 0.0,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "Read-only users cannot delete projects.",
+      "candidateResponse": "Read-only users cannot delete projects."
+    },
+    {
+      "caseId": "case-08",
+      "question": "Which regions are available?",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "f1Delta": 0.0,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "Atlas is available in Virginia and Frankfurt.",
+      "candidateResponse": "Atlas is available in Virginia and Frankfurt."
+    },
+    {
+      "caseId": "case-09",
+      "question": "How long are deleted projects recoverable?",
+      "baselinePassed": false,
+      "candidatePassed": true,
+      "f1Delta": 0.5833,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "Deleted projects can be recovered at any time by every user.",
+      "candidateResponse": "Deleted Atlas projects can be restored within seven days by a workspace owner."
+    },
+    {
+      "caseId": "case-10",
+      "question": "Does the starter plan include SSO?",
+      "baselinePassed": true,
+      "candidatePassed": true,
+      "f1Delta": 0.0,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "The Starter plan does not include SSO.",
+      "candidateResponse": "The Starter plan does not include SSO."
+    },
+    {
+      "caseId": "case-11",
+      "question": "What is Atlas revenue for next quarter?",
+      "baselinePassed": true,
+      "candidatePassed": false,
+      "f1Delta": -1.0,
+      "latencyDeltaMs": -1,
+      "baselineResponse": "Not enough information is available in the provided context.",
+      "candidateResponse": "Atlas publishes product documentation but provides no revenue forecasts."
+    },
+    {
+      "caseId": "case-12",
+      "question": "Return the API status as JSON.",
+      "baselinePassed": true,
+      "candidatePassed": false,
+      "f1Delta": -0.4286,
+      "latencyDeltaMs": 0,
+      "baselineResponse": "{\"status\":\"operational\"}",
+      "candidateResponse": "The API status is operational."
+    }
+  ]
+}

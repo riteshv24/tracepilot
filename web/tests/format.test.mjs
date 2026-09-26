@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {escape, clamp, percent, sortRows, uniqueBy, terminal, date} from '../lib/format.js';
+test('escapes user controlled HTML and quotes',()=>assert.equal(escape(`<img onerror="x">&'`),'&lt;img onerror=&quot;x&quot;&gt;&amp;&#39;'));
+test('handles null text without leaking undefined',()=>assert.equal(escape(null),''));
+test('clamps chart inputs',()=>{assert.equal(clamp(Infinity),0);assert.equal(clamp(-1),0);assert.equal(clamp(4),1);});
+test('formats finite percentages',()=>assert.equal(percent(.752),'75.2%'));
+test('sorting does not mutate original data',()=>{const data=[{n:3},{n:1}];assert.equal(sortRows(data,'n')[0].n,1);assert.equal(data[0].n,3);});
+test('deduplicates by stable identifiers',()=>assert.equal(uniqueBy([{id:1},{id:1},{id:2}],'id').length,2));
+test('recognizes all terminal states',()=>{for(const s of ['SUCCEEDED','FAILED','CANCELLED'])assert.ok(terminal(s));assert.equal(terminal('RUNNING'),false);});
+test('invalid dates render a placeholder',()=>assert.equal(date('not-a-date'),'—'));
