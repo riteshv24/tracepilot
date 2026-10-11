@@ -109,3 +109,7 @@ This is a single-workspace engineering application, not a multi-tenant productio
 ## License
 
 MIT for this repository's source. Review the licenses of dependencies before redistribution. No dependency source, font files, private tokens, generated runtime database, or artificial Git history is included.
+
+## Pull requests and releases
+
+Changes are checked by GitHub Actions before release. See [the release guide](docs/RELEASING.md) for PR checks, required repository settings, tested container images, and deployment setup.
