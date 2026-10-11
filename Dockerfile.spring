@@ -5,7 +5,7 @@ COPY engine engine
 COPY standalone standalone
 COPY spring spring
 COPY web web
-RUN mvn -B -ntp -pl spring -am package -DskipTests
+RUN mvn -B -ntp -pl spring -am verify
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
 RUN groupadd --system app && useradd --system --gid app --create-home app && mkdir /app/data && chown app:app /app/data
